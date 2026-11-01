@@ -1,0 +1,10 @@
+{
+  "description": "Explore Shrey Sharma’s UI/UX design portfolio, featuring selected projects, design approach, experience, resume, and contact details for recruiters and collaborators.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
