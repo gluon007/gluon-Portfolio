@@ -27,7 +27,7 @@ export function Header({ route, menu, setMenu, theme, setTheme }: HeaderProps) {
           <strong>
             SHREY SHARMA<span className="brand-dot">.</span>
           </strong>
-          <span>GLUON / DESIGN PORTFOLIO</span>
+          <span>GLUON PORTFOLIO</span>
         </Link>
         <button
           className="menu-toggle"

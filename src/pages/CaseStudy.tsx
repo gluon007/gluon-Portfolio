@@ -82,10 +82,12 @@ interface RichCaseStudyProps {
 function RichCaseStudy({ study, project }: RichCaseStudyProps) {
   return (
     <div className="page case-page">
-      <Link to="/library" className="text-link back-link">
-        ← Project Library
-      </Link>
-      <Tag>{study.tag}</Tag>
+      <div className="case-header-nav">
+        <Link to="/library" className="text-link back-link">
+          ← Project Library
+        </Link>
+        <Tag>{study.tag}</Tag>
+      </div>
       <h1>{study.title}</h1>
       <p className="case-headline">{study.headline}</p>
       {study.lede.map((l) => (
@@ -162,10 +164,12 @@ export function CaseStudy({ project }: CaseStudyProps) {
 
   return (
     <div className="page">
-      <Link to="/library" className="text-link back-link">
-        ← Project Library
-      </Link>
-      <Tag>CASE STUDY / {project.type.toUpperCase()}</Tag>
+      <div className="case-header-nav">
+        <Link to="/library" className="text-link back-link">
+          ← Project Library
+        </Link>
+        <Tag>CASE STUDY / {project.type.toUpperCase()}</Tag>
+      </div>
       <h1>{project.title}</h1>
       <p className="page-intro">{project.description}</p>
       <Tilt className="case-visual">

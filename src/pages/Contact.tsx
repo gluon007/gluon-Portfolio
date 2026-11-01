@@ -1,21 +1,37 @@
-import { useState } from "react"
-import { Arrow } from "../components/common/Arrow"
-import { Button } from "../components/common/Button"
-import { Label } from "../components/common/Label"
-import { Link } from "../components/common/Link"
-import { Tag } from "../components/common/Tag"
+import { useEffect, useRef, useState } from "react";
+import { Arrow } from "../components/common/Arrow";
+import { Button } from "../components/common/Button";
+import { Label } from "../components/common/Label";
+import { Link } from "../components/common/Link";
+import { SocialLinks } from "../components/common/SocialLinks";
+import { Tag } from "../components/common/Tag";
+import { copyTextToClipboard } from "../utils/clipboard";
 
 export function Contact() {
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied] = useState(false);
+  const timerRef = useRef<number | null>(null);
 
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText("ssshrey007@gmail.com")
-      setCopied(true)
-    } catch {
-      setCopied(false)
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
+  }, []);
+
+  const copyEmail = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    const success = await copyTextToClipboard("ssshrey007@gmail.com");
+    if (success) {
+      setCopied(true);
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+      timerRef.current = window.setTimeout(() => {
+        setCopied(false);
+      }, 2500);
     }
-  }
+  };
 
   return (
     <div className="page contact-page">
@@ -35,18 +51,21 @@ export function Contact() {
           <i />
           <i />
         </div>
-        <div className="contact-signature">
-          Shrey Sharma <span>/ Gluon</span>
-        </div>
       </div>
-
       <div className="contact-panel">
         <Label>GET IN TOUCH</Label>
         <div className="contact-item">
           <span>Email</span>
           <div>
             <Link to="mailto:ssshrey007@gmail.com">ssshrey007@gmail.com</Link>
-            <button aria-label="Copy email address" onClick={copyEmail}>
+            <button
+              type="button"
+              className={`copy-btn ${copied ? "copied" : ""}`}
+              aria-label={
+                copied ? "Email copied to clipboard" : "Copy email address"
+              }
+              onClick={copyEmail}
+            >
               {copied ? "Copied" : "Copy"}
             </button>
           </div>
@@ -57,12 +76,9 @@ export function Contact() {
             +91 9536727157 <Arrow />
           </Link>
         </div>
-        <div className="contact-item">
+        <div className="contact-item contact-item-social">
           <span>Elsewhere</span>
-          <div className="social-placeholders">
-            <span>LinkedIn · link to be added</span>
-            <span>Behance · link to be added</span>
-          </div>
+          <SocialLinks className="contact-social-links" />
         </div>
         <Button to="mailto:ssshrey007@gmail.com">
           Send an email <Arrow />
@@ -74,5 +90,5 @@ export function Contact() {
         </p>
       </div>
     </div>
-  )
+  );
 }

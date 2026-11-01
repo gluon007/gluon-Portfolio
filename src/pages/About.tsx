@@ -48,7 +48,7 @@ export function About() {
             <span className="portrait-mark" aria-hidden="true">
               S.
             </span>
-            <span className="portrait-label mono">PORTRAIT / TO BE ADDED</span>
+            <span className="portrait-label mono">PORTRAIT</span>
             <div className="name-plate">
               <strong>Shrey Sharma</strong>
               <span>UI/UX Designer · also Gluon</span>

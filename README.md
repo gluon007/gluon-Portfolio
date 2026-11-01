@@ -149,6 +149,9 @@ npm run format
 - **Designer**: Shrey Sharma (*Gluon*)
 - **Email**: [ssshrey007@gmail.com](mailto:ssshrey007@gmail.com)
 - **Phone**: [+91 9536727157](tel:+919536727157)
+- **LinkedIn**: [shrey-sharma007](https://www.linkedin.com/in/shrey-sharma007/?isSelfProfile=true)
+- **GitHub**: [@gluon007](https://github.com/gluon007)
+- **Figma Community**: [@gluon007](https://www.figma.com/@gluon007)
 - **Role**: UI/UX Designer @ [SRDT Pvt. Ltd.](https://www.srdt.co.in)
 
 ---

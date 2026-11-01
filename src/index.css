@@ -1,40 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter:wght@400..700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
-@font-face {
-  font-family: "IBM Plex Mono:Medium";
-  src: url("https://static.figma.com/font/IBMPlexMono-Medium_3") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Inter:Regular";
-  src: url("https://static.figma.com/font/Inter_1") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Inter:Semi Bold";
-  src: url("https://static.figma.com/font/Inter_1") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Space Grotesk:Bold";
-  src: url("https://static.figma.com/font/SpaceGrotesk_wght__1") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Space Grotesk:Medium";
-  src: url("https://static.figma.com/font/SpaceGrotesk_wght__1") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
+
 :root {
   --color-base: #f3ede3;
   --color-secondary: #e5d8c8;
@@ -52,9 +18,9 @@
   --color-accent-text: #914b34;
   --color-on-accent: #faf7f1;
   --color-sage: #a8b1a0;
-  --font-body: "Inter:Regular", sans-serif;
-  --font-display: "Fraunces", Georgia, serif;
-  --font-mono: "IBM Plex Mono:Medium", monospace;
+  --font-display: "Georgia", serif;
+  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --radius: 2px;
   --space-1: 8px;
   --space-2: 16px;
@@ -68,6 +34,106 @@
   --ease-state: ease-in-out;
   --focus-ring: 2px solid var(--color-accent);
 }
+
+/* ==========================================================================
+   Typography System:
+   • Georgia — headings and display text
+   • Inter — body copy, navigation, and buttons
+   • IBM Plex Mono — labels, tags, metadata, and technical text
+   ========================================================================== */
+
+/* 1. Georgia — Headings and Display Text */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-text,
+.brand strong,
+.footer-name,
+.next-project strong,
+.name-plate strong,
+.paper-head b,
+.web-headline,
+.case-headline,
+.empty-state h2,
+.cs-heading h2,
+.cs-sub,
+.company-monogram,
+.portrait-mark {
+  font-family: var(--font-display);
+}
+
+/* 2. Inter — Body Copy, Navigation, and Buttons */
+body,
+p,
+.page-intro,
+.hero-description,
+.resume-summary,
+.cs-prose p,
+.cs-prose li,
+.cs-defs p,
+header nav,
+header nav a,
+nav a,
+.nav-action,
+.menu-toggle,
+.footer-resume-link,
+.text-link,
+.back-link,
+.button,
+button,
+a.button,
+.hero-switch button,
+.theme-toggle,
+.view-toggle button,
+.filters button,
+.folder-toggle,
+.project-index button,
+.contact-item button,
+input,
+textarea {
+  font-family: var(--font-body);
+}
+
+/* 3. IBM Plex Mono — Labels, Tags, Metadata, and Technical Text */
+.mono,
+.mono *,
+span.mono,
+.eyebrow,
+.tiny-label,
+.index-label,
+.paper-label,
+.portrait-label,
+.hero-facts dt,
+.tag,
+.paper-pill,
+.mini-pill,
+.status,
+.identity-chips li,
+.module-chips span,
+.project-number,
+.experience-date,
+.card-meta,
+.card-link,
+.visual-disclaimer,
+.visual-note,
+.pdf-toolbar .mono,
+.documentation-notice,
+.brand > span,
+.footer-name span,
+.footer-bottom,
+.marquee-track,
+.module-controls .mono,
+.education-row .mono,
+.cs-objective span.mono,
+.cs-takeaway span.mono,
+.cs-placeholder,
+.hello-art span {
+  font-family: var(--font-mono);
+}
+
 @layer base {
   body {
     background: var(--color-base);
@@ -255,7 +321,7 @@ nav .nav-action:hover {
   padding: 12px 19px;
   border: 1px solid var(--color-accent);
   border-radius: var(--radius);
-  font-family: "Inter:Semi Bold", sans-serif;
+  font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
   line-height: 1.4;
@@ -524,7 +590,7 @@ nav .nav-action:hover {
   background: var(--color-raised);
 }
 .experience-row h3 {
-  font-family: "Inter:Semi Bold", sans-serif;
+  font-family: var(--font-body);
   font-size: 14px;
 }
 .experience-row h3 span {
@@ -1003,7 +1069,7 @@ footer {
   font-size: 12px;
   margin-bottom: 10px;
 }
-.contact-item > div {
+.contact-item > div:not(.social-links-group) {
   display: flex;
   justify-content: space-between;
   gap: 10px;
@@ -1011,12 +1077,38 @@ footer {
 .contact-item a {
   font-size: 17px;
 }
-.contact-item button {
+.contact-item button,
+.copy-btn {
   font-size: 12px;
+  font-family: var(--font-mono);
+  font-weight: 500;
   color: var(--color-accent-text);
+  background: transparent;
   border: 1px solid var(--color-strong);
-  padding: 2px 9px;
-  border-radius: var(--radius);
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    background-color var(--dur-fast) var(--ease-state),
+    color var(--dur-fast) var(--ease-state),
+    border-color var(--dur-fast) var(--ease-state),
+    transform var(--dur-fast) var(--ease-out);
+}
+.contact-item button:hover,
+.copy-btn:hover {
+  background: var(--color-hover);
+  border-color: var(--color-accent);
+  color: var(--color-accent-hover);
+}
+.contact-item button:active,
+.copy-btn:active {
+  transform: scale(0.96);
+}
+.contact-item button.copied,
+.copy-btn.copied {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-on-accent);
 }
 .contact-item .social-placeholders {
   flex-direction: column;
@@ -2884,14 +2976,14 @@ nav .nav-action,
   transform: translateX(120%);
 }
 .text-link,
-.footer-top a,
+.footer-top a:not(.social-icon-btn),
 .footer-bottom a,
 .hero-location,
 .card-link {
   position: relative;
 }
 .text-link::after,
-.footer-top a::after {
+.footer-top a:not(.social-icon-btn)::after {
   content: "";
   position: absolute;
   left: 0;
@@ -2904,7 +2996,7 @@ nav .nav-action,
   transition: transform var(--dur-mid) var(--ease-out);
 }
 .text-link:hover::after,
-.footer-top a:hover::after {
+.footer-top a:not(.social-icon-btn):hover::after {
   transform: scaleX(1);
 }
 .hero-art:hover .floating-note {
@@ -3604,6 +3696,7 @@ nav .nav-action,
   --color-on-ink: #f4eee4;
   --color-ink-copy: #d9cdbb;
   --color-ink-accent: #e8b29d;
+  --font-display: "Georgia", serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --space-6: 96px;
@@ -4362,6 +4455,23 @@ footer {
 .back-link {
   margin-bottom: 32px;
   display: inline-flex;
+}
+.case-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.case-header-nav .back-link {
+  margin-bottom: 0;
+}
+.case-header-nav .tag {
+  margin-bottom: 0;
+}
+.back-link + .tag,
+.tag + .back-link {
+  margin-left: 20px;
 }
 .case-visual {
   margin-top: var(--block-gap);
@@ -5439,7 +5549,151 @@ header,
   .cs-objective,
   .cs-note,
   .next-project,
+  .social-icon-btn,
   .theme-icon::after {
     transition: none;
   }
+}
+
+/* ===== Social Icon Links ===== */
+.social-links-group,
+.contact-item > div.social-links-group,
+.contact-item-social .social-links-group {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+  width: fit-content !important;
+  max-width: fit-content !important;
+  padding: 4px 0;
+}
+.social-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border) !important;
+  color: var(--color-copy);
+  text-decoration: none !important;
+  position: relative;
+  overflow: visible;
+  flex-shrink: 0;
+  transition:
+    transform var(--dur-mid) var(--ease-out),
+    color var(--dur-mid) var(--ease-state),
+    background-color var(--dur-mid) var(--ease-state),
+    border-color var(--dur-mid) var(--ease-state);
+}
+.social-icon-btn svg {
+  display: block;
+}
+.social-icon-btn svg path {
+  fill: currentColor;
+  transition: fill var(--dur-mid) var(--ease-state);
+}
+.social-icon-btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+.social-icon-btn:active {
+  transform: translateY(0) scale(0.95);
+}
+
+/* Ensure no pseudo-element underlines or stray lines appear */
+.social-icon-btn::before,
+.social-icon-btn::after,
+.social-icon-btn:hover::before,
+.social-icon-btn:hover::after,
+.footer-top a.social-icon-btn::before,
+.footer-top a.social-icon-btn::after,
+.footer-top a.social-icon-btn:hover::before,
+.footer-top a.social-icon-btn:hover::after,
+.contact-item a.social-icon-btn::before,
+.contact-item a.social-icon-btn::after,
+.contact-item a.social-icon-btn:hover::before,
+.contact-item a.social-icon-btn:hover::after {
+  display: none !important;
+  content: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  transform: none !important;
+  border: none !important;
+}
+
+/* LinkedIn hover: actual brand color, visible 4-sided border, no glow */
+.social-icon-btn.social-linkedin:hover {
+  color: #0a66c2 !important;
+  border: 1px solid #0a66c2 !important;
+  background: var(--color-hover);
+  transform: translateY(-2px);
+  box-shadow: none !important;
+}
+
+/* GitHub hover: actual brand color, visible 4-sided border, no glow */
+.social-icon-btn.social-github:hover {
+  color: #181717 !important;
+  border: 1px solid #181717 !important;
+  background: var(--color-hover);
+  transform: translateY(-2px);
+  box-shadow: none !important;
+}
+:root[data-theme="dark"] .social-icon-btn.social-github:hover {
+  color: #ffffff !important;
+  border: 1px solid #ffffff !important;
+  background: var(--color-hover);
+  box-shadow: none !important;
+}
+
+/* Figma hover: actual brand color, visible 4-sided border, no glow */
+.social-icon-btn.social-figma:hover {
+  border: 1px solid #f24e1e !important;
+  background: var(--color-hover);
+  transform: translateY(-2px);
+  box-shadow: none !important;
+}
+.social-icon-btn.social-figma:hover .figma-red {
+  fill: #f24e1e;
+}
+.social-icon-btn.social-figma:hover .figma-orange {
+  fill: #ff7262;
+}
+.social-icon-btn.social-figma:hover .figma-purple {
+  fill: #a259ff;
+}
+.social-icon-btn.social-figma:hover .figma-blue {
+  fill: #1abcfe;
+}
+.social-icon-btn.social-figma:hover .figma-green {
+  fill: #0acf83;
+}
+
+/* Footer & Contact integrations */
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.footer-resume-link {
+  font-size: 13px;
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.contact-item-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.contact-social-links {
+  margin-top: 4px;
+  justify-content: flex-start !important;
+  width: fit-content !important;
 }

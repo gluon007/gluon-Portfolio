@@ -1,6 +1,7 @@
 import { scrollToTop } from "../../utils/motion"
 import { Arrow } from "../common/Arrow"
 import { Link } from "../common/Link"
+import { SocialLinks } from "../common/SocialLinks"
 
 export function Footer() {
   return (
@@ -12,11 +13,9 @@ export function Footer() {
         <Link to="mailto:ssshrey007@gmail.com">
           ssshrey007@gmail.com <Arrow />
         </Link>
-        <div>
-          <span className="social-placeholder" title="Profile URL not supplied">
-            LinkedIn · coming soon
-          </span>
-          <Link to="/resume">
+        <div className="footer-links">
+          <SocialLinks />
+          <Link to="/resume" className="footer-resume-link">
             Resume <Arrow />
           </Link>
         </div>

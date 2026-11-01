@@ -45,7 +45,7 @@ export default function App() {
   useEffect(() => {
     document.title =
       route === "/"
-        ? "Shrey Sharma — UI/UX Designer"
+        ? "Shrey Sharma - UI/UX Designer"
         : route.includes("project")
           ? "Selected work — Shrey Sharma"
           : `${route.slice(1).replace(/^./, (c) => c.toUpperCase())} — Shrey Sharma`
