@@ -144,27 +144,33 @@ export function Library() {
           </div>
 
           <div className="selected-project" key={active.id}>
-            <ProductPreview kind={active.id} large />
-            <div className="detail-bottom">
-              <div>
-                <Tag>{active.category}</Tag>
-                <h2>{active.title}</h2>
-                <p>{active.description}</p>
+            <div className="project-detail-content">
+              <div className="project-detail-header">
+                <div>
+                  <Tag>{active.category}</Tag>
+                  <h2>{active.title}</h2>
+                  <p>{active.description}</p>
+                </div>
+                <div className="project-detail-actions">
+                  <Button to={`/project/${active.id}`}>
+                    Explore project <Arrow />
+                  </Button>
+                </div>
               </div>
-              <Button to={`/project/${active.id}`}>
-                Explore project <Arrow />
-              </Button>
+              {active.id === "unif" && (
+                <div className="module-chips">
+                  {modules.slice(0, 6).map((m) => (
+                    <span key={m}>{m}</span>
+                  ))}
+                  <span>+6 modules</span>
+                </div>
+              )}
             </div>
-            {active.id === "unif" && (
-              <div className="module-chips">
-                {modules.slice(0, 6).map((m) => (
-                  <span key={m}>{m}</span>
-                ))}
-                <span>+6 modules</span>
+            <div className="project-detail-visual">
+              <ProductPreview kind={active.id} large />
+              <div className="visual-disclaimer mono">
+                ILLUSTRATIVE PREVIEW · PROJECT DOCUMENTATION IN PROGRESS
               </div>
-            )}
-            <div className="visual-disclaimer mono">
-              ILLUSTRATIVE PREVIEW · PROJECT DOCUMENTATION IN PROGRESS
             </div>
           </div>
         </div>
