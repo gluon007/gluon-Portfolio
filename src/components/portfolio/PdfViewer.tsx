@@ -20,12 +20,7 @@ export function PdfViewer({ url }: PdfViewerProps) {
         }}
       >
         <div className="pdf-fallback" role="alert">
-          <svg
-            viewBox="0 0 120 96"
-            width="120"
-            height="96"
-            aria-hidden="true"
-          >
+          <svg viewBox="0 0 120 96" width="120" height="96" aria-hidden="true">
             <rect
               x="30"
               y="8"
@@ -36,30 +31,9 @@ export function PdfViewer({ url }: PdfViewerProps) {
               stroke="#D0C1AF"
               strokeWidth="2"
             />
-            <rect
-              x="40"
-              y="20"
-              width="26"
-              height="4"
-              rx="2"
-              fill="#AD5E43"
-            />
-            <rect
-              x="40"
-              y="31"
-              width="40"
-              height="3"
-              rx="1.5"
-              fill="#D0C1AF"
-            />
-            <rect
-              x="40"
-              y="39"
-              width="34"
-              height="3"
-              rx="1.5"
-              fill="#D0C1AF"
-            />
+            <rect x="40" y="20" width="26" height="4" rx="2" fill="#AD5E43" />
+            <rect x="40" y="31" width="40" height="3" rx="1.5" fill="#D0C1AF" />
+            <rect x="40" y="39" width="34" height="3" rx="1.5" fill="#D0C1AF" />
             <circle
               cx="82"
               cy="68"
@@ -79,12 +53,11 @@ export function PdfViewer({ url }: PdfViewerProps) {
             <strong>This browser can’t display the PDF here.</strong>
             <p>You can still download it and open it on your device.</p>
           </div>
-          <a
-            className="button"
-            href={url}
-            download="Shrey-Sharma-Resume.pdf"
-          >
-            Download the PDF <span className="arrow" aria-hidden="true">↓</span>
+          <a className="button" href={url} download="Shrey-Sharma-Resume.pdf">
+            Download the PDF{" "}
+            <span className="arrow" aria-hidden="true">
+              ↓
+            </span>
           </a>
         </div>
       </iframe>

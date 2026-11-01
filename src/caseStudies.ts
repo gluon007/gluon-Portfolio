@@ -9,9 +9,13 @@ export type Block =
   | { t: "placeholder"; text: string }
   | { t: "takeaway"; text: string }
 
-export type Section = { n: string; title: string; blocks: Block[] }
+export interface Section {
+  n: string
+  title: string
+  blocks: Block[]
+}
 
-export type Study = {
+export interface Study {
   tag: string
   title: string
   headline: string

@@ -8,4 +8,3 @@ interface TagProps {
 export function Tag({ children, className = "" }: TagProps) {
   return <span className={`tag ${className}`.trim()}>{children}</span>
 }
-

@@ -7,4 +7,3 @@ interface LabelProps {
 export function Label({ children }: LabelProps) {
   return <div className="eyebrow">{children}</div>
 }
-

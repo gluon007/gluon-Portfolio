@@ -36,4 +36,3 @@ export function Tilt({ children, className = "" }: TiltProps) {
     </div>
   )
 }
-

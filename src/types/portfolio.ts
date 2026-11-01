@@ -16,4 +16,3 @@ export interface NavigationItem {
 }
 
 export type { Block, Section, Study }
-

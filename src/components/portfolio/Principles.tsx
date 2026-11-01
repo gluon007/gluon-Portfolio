@@ -32,4 +32,3 @@ export function Principles({ className = "" }: PrinciplesProps) {
     </div>
   )
 }
-

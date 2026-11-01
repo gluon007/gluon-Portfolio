@@ -18,4 +18,3 @@ export function Link({ to, children, className = "" }: LinkProps) {
     </a>
   )
 }
-

@@ -31,4 +31,3 @@ export function ModuleCard({ name, index }: ModuleCardProps) {
     </article>
   )
 }
-

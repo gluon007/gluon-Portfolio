@@ -16,4 +16,3 @@ export function scrollToTop(): void {
     behavior: calm() ? "instant" : "smooth",
   })
 }
-

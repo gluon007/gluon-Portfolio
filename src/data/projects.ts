@@ -61,4 +61,3 @@ export const navigationItems: NavigationItem[] = [
   { to: "/resume", title: "Resume" },
   { to: "/contact", title: "Contact" },
 ]
-

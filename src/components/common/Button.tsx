@@ -14,4 +14,3 @@ export function Button({ to, children, secondary = false }: ButtonProps) {
     </Link>
   )
 }
-

@@ -74,7 +74,12 @@ function renderBlock(b: Block, i: number) {
   }
 }
 
-function RichCaseStudy({ study, project }: { study: Study; project: Project }) {
+interface RichCaseStudyProps {
+  study: Study
+  project: Project
+}
+
+function RichCaseStudy({ study, project }: RichCaseStudyProps) {
   return (
     <div className="page case-page">
       <Link to="/library" className="text-link back-link">

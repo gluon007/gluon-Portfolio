@@ -19,4 +19,3 @@ export function NextProject({ id }: NextProjectProps) {
     </Link>
   )
 }
-
